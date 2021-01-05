@@ -1,4 +1,3 @@
-var container = document.querySelector('.container');
 var button = document.querySelector('.button');
 var input_text = document.querySelector('.input-text');
 
@@ -9,7 +8,7 @@ button.addEventListener('click', () => {
         .then(data => console.log(data));
 
     // API for 16 days
-    // fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=Kolkata&key=9cc4d396352649cab1e283fea41427fd`)
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
+    fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=Kolkata&key=9cc4d396352649cab1e283fea41427fd`)
+        .then(response => response.json())
+        .then(data => console.log(data))
 })

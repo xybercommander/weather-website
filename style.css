@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+}
+
+
+/* THE TOP CONTAINER */
+
+.container {
+    height: 70vh;
+    background-image: url('https://wallpaperaccess.com/full/7285.jpg');
+    background-size: cover;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0 20px;
+}
+
+.location {
+    color: white;
+    mix-blend-mode: color-dodge;
+    font-size: 30px;
+}
+
+.input-text {
+    width: 230px;
+    height: 45px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    outline: none;
+    padding-left: 15px;
+}
+
+.button {
+    height: 47px;
+    width: 47px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    outline: none;
+}
+
+
+/* THE BOTTOM CONTAINER */
