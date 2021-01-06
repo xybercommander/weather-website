@@ -6,22 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/WeatherWebpage/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
     <title>Weather</title>
 </head>
 
 <body>
+
     <div class="container">
         <div class="top-row">
             <div class="location">
-                Kolkata, IN
+                <i class="fas fa-map-marker-alt"></i>&nbsp;
+                <div class="location-name">Kolkata, IN</div>
             </div>
+
             <div class="input">
-                <input type="text" class="input-text">
-                <i class="fas fa-search-location"></i>
-                <button type="submit" class="button"></button>
+                <input type="text" class="input-text" spellcheck="false">
+                <button type="submit" class="button">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
             </div>
         </div>
     </div>
+
+
+    <div class="container-2">
+
+        <div class="grid-item-big span-2 g1">
+            <div class="temp1">26°</div>
+            <i class="far fa-sun" id="icon1"></i> 
+            <div class="date1">Wednesday, 6th</div>
+            <div class="min-max1">10°&emsp;/&emsp;25°</div>
+        </div>
+
+        <div class="grid-item g2">
+            <div class="day d2">Thu</div>
+            <i class="far fa-sun" id="icon2"></i> 
+            <div class="temp min-max2">10°&ensp;/&ensp;25°</div>
+        </div>
+
+        <div class="grid-item g3">
+            <div class="day d3">Thu</div>
+            <i class="far fa-sun" id="icon3"></i> 
+            <div class="temp min-max3">10°&ensp;/&ensp;25°</div>
+        </div>
+
+        <div class="grid-item g4">
+            <div class="day d4">Thu</div>
+            <i class="far fa-sun" id="icon4"></i> 
+            <div class="temp min-max4">10°&ensp;/&ensp;25°</div>
+        </div>
+
+        <div class="grid-item g5">
+            <div class="day d5">Thu</div>
+            <i class="far fa-sun" id="icon5"></i> 
+            <div class="temp min-max5">10°&ensp;/&ensp;25°</div>
+        </div>
+
+        <div class="grid-item g6">
+            <div class="day d6">Thu</div>
+            <i class="fas fa-cloud-sun" id="icon6"></i> 
+            <div class="temp min-max6">10°&ensp;/&ensp;25°</div>
+        </div>
+
+        <div class="grid-item g7">
+            <div class="day d7">Thu</div>
+            <i class="far fa-sun" id="icon7"></i> 
+            <div class="temp min-max7">10°&ensp;/&ensp;25°</div>
+        </div>
+    </div>
+
     <script src="/WeatherWebpage/script.js"></script>
 </body>
 
