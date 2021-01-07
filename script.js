@@ -83,7 +83,7 @@ var icon_images = {
 
 // Background Images
 var background_images = {
-    'Thunderstorm with light rain': 'https://www.desktopbackground.org/download/o/2010/04/10/29_ultra-hd-4k-rain-wallpapers-hd-desktop-backgrounds-3840x2400_3840x2400_h.jpg',
+    'Thunderstorm with light rain': '/WeatherWebpage/bgImages/rain.jpg',
     'Thunderstorm with rain': 'https://www.desktopbackground.org/download/o/2010/04/10/29_ultra-hd-4k-rain-wallpapers-hd-desktop-backgrounds-3840x2400_3840x2400_h.jpg',
     'Thunderstorm with heavy rain': 'https://www.desktopbackground.org/download/o/2010/04/10/29_ultra-hd-4k-rain-wallpapers-hd-desktop-backgrounds-3840x2400_3840x2400_h.jpg',
     'Thunderstorm with light drizzle': 'https://www.desktopbackground.org/download/o/2010/04/10/29_ultra-hd-4k-rain-wallpapers-hd-desktop-backgrounds-3840x2400_3840x2400_h.jpg',
