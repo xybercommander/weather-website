@@ -125,6 +125,7 @@ var background_images = {
 
 
 
+// MANIPULATING THE WEEKDAY DATA //
 var date = new Date();
 var today = date.getDay();
 var weekday = {
@@ -168,7 +169,7 @@ button.addEventListener('click', () => {
     .then(response => response.json())
     .then(data => {
         // console.log(data);
-        
+
         var temperature = Math.floor(data['data']['0']['temp']);
         temp1.innerText = temperature.toString() + "°";
     });
