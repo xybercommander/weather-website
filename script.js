@@ -163,11 +163,22 @@ if(today_date == 1 || today_date == 21 || today_date == 31) {
 button.addEventListener('click', () => {
 
 
+    // API FOR CURRENT DATA
+    fetch(`https://api.weatherbit.io/v2.0/current?city=${input_text.value}&key=9cc4d396352649cab1e283fea41427fd`)
+    .then(response => response.json())
+    .then(data => {
+        // console.log(data);
+        
+        var temperature = Math.floor(data['data']['0']['temp']);
+        temp1.innerText = temperature.toString() + "°";
+    });
+
+
     // API FOR 16 DAYS  
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${input_text.value}&key=9cc4d396352649cab1e283fea41427fd`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
 
             // Location name
             place.innerText = data['city_name'].toString() + ", " + data['country_code'];
@@ -227,17 +238,5 @@ button.addEventListener('click', () => {
             min_max_7.innerText = mintemp7 + "°\xa0\xa0/\xa0\xa0" + maxtemp7 + "°";
             day7.innerText = weekday[week_Day[6]].slice(0, 3);
         })
-
-
-
-
-        // API FOR CURRENT DATA
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input_text.value}&appid=dc5256050d46fc16a6e32fdfc241d49c`)
-        .then(response => response.json())
-        .then(data => {
-            // console.log(data);
-            var temperature = Math.floor(data['main']['temp'] - 273.15);
-            temp1.innerText = temperature.toString() + "°";
-        });
 
 }) 
