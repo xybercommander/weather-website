@@ -72,7 +72,7 @@ var icon_images = {
     'Sand/dust': 'fas fa-wind',
     'Fog': 'fas fa-smog',
     'Freezing Fog': 'fas fa-smog',
-    'Clear Sky': 'far fa-sun',
+    'Clear Sky': 'fas fa-sun',
     'Few clouds': 'fas fa-cloud-sun',
     'Scattered clouds': 'fas fa-cloud-sun',
     'Broken clouds': 'fas fa-cloud-sun',
