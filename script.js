@@ -1,6 +1,41 @@
-function temp_slicer (temp) {
-    return Math.floor(temp);
+// ----------------------------------
+// SETTING THE CURRENT LOCATION FOR THE INITIAL OPENING OF THE WEBSITE//
+var initLocation = 'lol';
+
+
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      alert("Geolocation is not supported by this browser");
+    }
 }
+
+function showPosition(position) {
+    // console.log(position.coords.latitude + " " + position.coords.longitude);
+    fetch('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=' 
+        + position.coords.latitude + '&longitude=' + position.coords.longitude + '&localityLanguage=en')
+        .then(response => response.json())
+        .then(data => {
+            // console.log(data['city']);
+            // setPosition(initLocation, data['city']);
+            getInitData(data['city'].toString());
+        });
+}
+
+function setPosition(city_name, cityName) {
+    city_name = cityName;
+    return city_name;
+}
+
+getLocation()
+
+
+// CURRENT LOCATION DONE //
+// -----------------------------------
+
+
+
 
 
 var button = document.querySelector('.button');
@@ -159,6 +194,13 @@ if(today_date == 1 || today_date == 21 || today_date == 31) {
 }
 
 
+
+// temp slice function is used to floor the temperature values
+function temp_slicer (temp) {
+    return Math.floor(temp);
+}
+
+
 // THE BUTTON FUNCTION //
 
 button.addEventListener('click', () => {
@@ -241,3 +283,86 @@ button.addEventListener('click', () => {
         })
 
 }) 
+
+
+
+// FUNCTION FOR GETTING THE INITIAL DATA //
+
+function getInitData(inputData) {
+
+    // API FOR CURRENT DATA
+    fetch(`https://api.weatherbit.io/v2.0/current?city=${inputData}&key=9cc4d396352649cab1e283fea41427fd`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+
+        var temperature = Math.floor(data['data']['0']['temp']);
+        temp1.innerText = temperature.toString() + "°";
+    });
+
+
+    // API FOR 16 DAYS  
+    fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${inputData}&key=9cc4d396352649cab1e283fea41427fd`)
+        .then(response => response.json())
+        .then(data => {
+            // console.log(data);
+
+            // Location name
+            place.innerText = data['city_name'].toString() + ", " + data['country_code'];
+
+            // Icons
+            icon1.className = icon_images[data['data']['0']['weather']['description']];
+            icon2.className = icon_images[data['data']['1']['weather']['description']];
+            icon3.className = icon_images[data['data']['2']['weather']['description']];
+            icon4.className = icon_images[data['data']['3']['weather']['description']];
+            icon5.className = icon_images[data['data']['4']['weather']['description']];
+            icon6.className = icon_images[data['data']['5']['weather']['description']];
+            icon7.className = icon_images[data['data']['6']['weather']['description']];
+
+            // Day1
+            let mintemp1 = temp_slicer(data['data']['0']['app_min_temp']).toString();
+            let maxtemp1 = temp_slicer(data['data']['0']['app_max_temp']).toString();
+            min_max_1.innerText = mintemp1 + "°\xa0\xa0\xa0\xa0/\xa0\xa0\xa0\xa0" + maxtemp1 + "°";
+            day1.innerText = weekday[week_Day[0]] + ', ' + day1_date;
+
+            // Setting the Background Image // 
+            document.body.style.backgroundImage = `url('${background_images[data['data']['0']['weather']['description']]}')`
+
+
+            // Day2
+            let mintemp2 = temp_slicer(data['data']['1']['app_min_temp']).toString();
+            let maxtemp2 = temp_slicer(data['data']['1']['app_max_temp']).toString();
+            min_max_2.innerText = mintemp2 + "°\xa0\xa0/\xa0\xa0" + maxtemp2 + "°";
+            day2.innerText = weekday[week_Day[1]].slice(0, 3);
+
+            // Day3
+            let mintemp3 = temp_slicer(data['data']['2']['app_min_temp']).toString();
+            let maxtemp3 = temp_slicer(data['data']['2']['app_max_temp']).toString();
+            min_max_3.innerText = mintemp3 + "°\xa0\xa0/\xa0\xa0" + maxtemp3 + "°";
+            day3.innerText = weekday[week_Day[2]].slice(0, 3);
+
+            // Day4
+            let mintemp4 = temp_slicer(data['data']['3']['app_min_temp']).toString();
+            let maxtemp4 = temp_slicer(data['data']['3']['app_max_temp']).toString();
+            min_max_4.innerText = mintemp4 + "°\xa0\xa0/\xa0\xa0" + maxtemp4 + "°";
+            day4.innerText = weekday[week_Day[3]].slice(0, 3);
+
+            // Day5
+            let mintemp5 = temp_slicer(data['data']['4']['app_min_temp']).toString();
+            let maxtemp5 = temp_slicer(data['data']['4']['app_max_temp']).toString();
+            min_max_5.innerText = mintemp5 + "°\xa0\xa0/\xa0\xa0" + maxtemp5 + "°";
+            day5.innerText = weekday[week_Day[4]].slice(0, 3);
+
+            // Day6
+            let mintemp6 = temp_slicer(data['data']['5']['app_min_temp']).toString();
+            let maxtemp6 = temp_slicer(data['data']['5']['app_max_temp']).toString();
+            min_max_6.innerText = mintemp6 + "°\xa0\xa0/\xa0\xa0" + maxtemp6 + "°";
+            day6.innerText = weekday[week_Day[5]].slice(0, 3);
+
+            // Day7
+            let mintemp7 = temp_slicer(data['data']['6']['app_min_temp']).toString();
+            let maxtemp7 = temp_slicer(data['data']['6']['app_max_temp']).toString();
+            min_max_7.innerText = mintemp7 + "°\xa0\xa0/\xa0\xa0" + maxtemp7 + "°";
+            day7.innerText = weekday[week_Day[6]].slice(0, 3);
+        })
+}

@@ -34,6 +34,7 @@ THE TOP CONTAINER
     display: flex;
     justify-content: space-around;
     min-width: 325px;
+    transform: translateY(10px);
 }
 
 .fa-search {
