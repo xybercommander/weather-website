@@ -294,7 +294,7 @@ function getInitData(inputData) {
     fetch(`https://api.weatherbit.io/v2.0/current?city=${inputData}&key=9cc4d396352649cab1e283fea41427fd`)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
 
         var temperature = Math.floor(data['data']['0']['temp']);
         temp1.innerText = temperature.toString() + "°";
