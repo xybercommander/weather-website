@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-image: url('https://wallpaperaccess.com/full/7285.jpg');
+    background-image: url('https://wallpaperaccess.com/full/7285.jpg') no-repeat right top fixed, linear-gradient(to right rgb(157, 157, 236), #fff);
     background-size: cover;
 }
 

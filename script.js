@@ -164,6 +164,7 @@ var background_images = {
 var date = new Date();
 var today = date.getDay();
 var weekday = {
+    0: 'Sunday',
     1: 'Monday',
     2: 'Tuesday',
     3: 'Wednesday',
@@ -221,7 +222,7 @@ button.addEventListener('click', () => {
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${input_text.value}&key=9cc4d396352649cab1e283fea41427fd`)
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
+            console.log(data);
 
             // Location name
             place.innerText = data['city_name'].toString() + ", " + data['country_code'];
@@ -242,7 +243,7 @@ button.addEventListener('click', () => {
             day1.innerText = weekday[week_Day[0]] + ', ' + day1_date;
 
             // Setting the Background Image // 
-            document.body.style.backgroundImage = `url('${background_images[data['data']['0']['weather']['description']]}')`
+            document.body.style.backgroundImage = `url('${background_images[data['data']['0']['weather']['description']]}')`;
 
 
             // Day2
@@ -324,6 +325,7 @@ function getInitData(inputData) {
             let maxtemp1 = temp_slicer(data['data']['0']['app_max_temp']).toString();
             min_max_1.innerText = mintemp1 + "°\xa0\xa0\xa0\xa0/\xa0\xa0\xa0\xa0" + maxtemp1 + "°";
             day1.innerText = weekday[week_Day[0]] + ', ' + day1_date;
+            console.log(week_Day)
 
             // Setting the Background Image // 
             document.body.style.backgroundImage = `url('${background_images[data['data']['0']['weather']['description']]}')`
