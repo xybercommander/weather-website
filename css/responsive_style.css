@@ -1,0 +1,35 @@
+@media screen and (max-width: 600px) {
+
+    /* **************************
+    THE TOP CONTAINER
+    ************************** */
+
+    .container {
+        background-color: aquamarine;
+        height: 25vh;
+    }
+
+    .location {
+        display: inline-block;
+        font-size: 20px;
+        transform: ;
+    }
+    #location-marker {
+        display: none;
+    }
+
+    .input {        
+        transform: translate(-120px, 50px);
+        background-color: brown;
+    }
+
+
+
+
+
+
+    .container-2 {
+        display: none;
+    }
+
+}
