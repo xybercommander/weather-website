@@ -105,7 +105,8 @@ THE BOTTOM CONTAINER
 
 /* Grid Item 1 */
 .span-2 {
-    min-width: 450px;
+    min-width: 360px;
+    min-height: 300px;
     border: none;
 }
 .temp1 {
